@@ -1,7 +1,11 @@
 import React from 'react';
+import AirbnbLogo from '../images/logo.png'
 
 export default function Header(){
     return (
-        <h1>Header</h1>
+        <header className='header-div'>
+            <img src= {AirbnbLogo } alt=''></img>
+        </header>
+        
     )
 }

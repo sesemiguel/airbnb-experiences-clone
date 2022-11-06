@@ -4,45 +4,28 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HeroImage from './components/HeroImage';
 import HeroText from './components/HeroText';
-import img1 from './images/img1.png';
-import img2 from './images/img2.png';
-import img3 from './images/img3.png';
-import star from './images/star.png';
+import experiences from './experiences';
 
-const App = (
-    <div>
-        <Header />
-        <HeroImage />
-        <HeroText />
+function App() {
+
+    const experienceCards = experiences.map(experienceCard => 
         <ExperienceCard 
-            mainImg={img1}
-            starImg={star}
-            reviewRating={5.0}
-            numberOfReviews={57}
-            location='PH'
-            experienceTitle='Life lessons with Katie Zaferes'
-            cost={136}
+            key={experienceCard.id}
+            experienceCard={experienceCard}
         />
-        <ExperienceCard 
-            mainImg={img2}
-            starImg={star}
-            reviewRating={5.0}
-            numberOfReviews={30}
-            location='PH'
-            experienceTitle='Learn wedding photography'
-            cost={125}
-        />
-        <ExperienceCard 
-            mainImg={img3}
-            starImg={star}
-            reviewRating={5.0}
-            numberOfReviews={57}
-            location='PH'
-            experienceTitle='Life lessons with Katie Zaferes'
-            cost={136}
-        />
-        <Footer />
-    </div>
-)
+    )
+
+    return(
+        <>
+            <Header />
+            <HeroImage />
+            <HeroText />
+            <>
+                {experienceCards}
+            </>
+            <Footer />
+        </>
+    );
+}
 
 export default App;
